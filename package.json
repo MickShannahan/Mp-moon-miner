@@ -3,12 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@bcwdev/auth0provider-client": "0.0.2",
+    "axios": "^0.19.2",
+    "bootstrap": "^4.5.2",
     "core-js": "^3.6.5",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0"
   },

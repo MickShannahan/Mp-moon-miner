@@ -1,16 +1,10 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light holo-panel-primary">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center">
-        <img alt="Vue logo" src="../assets/logo.png" style="transform: rotate(-90deg);width: 25px;" />
-        <img
-          alt="Vue logo"
-          src="../assets/logo.png"
-          style="transform: rotate(-90deg);width: 25px;margin-top: -10px;"
-        />
       </div>
       <div>
-        <h3 style="color: green">loggr</h3>
+        <h5 style="color: green">Miner</h5>
       </div>
     </router-link>
     <button
@@ -27,13 +21,8 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item" :class="{ active: $route.name == 'Home' }">
-          <router-link :to="{ name: 'Home' }" class="nav-link">Home</router-link>
+          <router-link :to="{ name: 'Game' }" class="nav-link">Game</router-link>
         </li>
-        <li
-          class="nav-item"
-          v-if="user.isAuthenticated"
-          :class="{ active: $route.name == 'Profile' }"
-        ></li>
       </ul>
       <span class="navbar-text">
         <button class="btn btn-success" @click="login" v-if="!user.isAuthenticated">Login</button>
@@ -46,11 +35,7 @@
           <div
             class="dropdown-menu p-0 list-group w-100"
             :class="{show: state.dropOpen}"
-            @click="state.dropOpen = false"
-          >
-            <router-link :to="{ name: 'Profile' }">
-              <div class="list-group-item list-group-item-action hoverable">Profile</div>
-            </router-link>
+            @click="state.dropOpen = false">
             <div class="list-group-item list-group-item-action hoverable" @click="logout">logout</div>
           </div>
         </div>

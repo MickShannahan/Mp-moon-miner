@@ -1,11 +1,31 @@
-$body-bg: #bdbd21;
 
-$primary: #155f59;
-$secondary: #e90e66;
-$danger: #dd0000;
-$success: lime;
-$warning: orange;
-$info: aqua;
+$primary: #483ddf;
+$secondary: #8939e4;
+$danger: #ee2626;
+$success: rgba(63, 245, 124);
+$warning: rgb(255, 238, 0);
+$info: rgb(126, 255, 234);
+
+$primary75: rgba(72, 61, 223, 0.75);
+$secondary75: rgba(137, 57, 228, 0.75);
+$danger75: rgba(238, 38, 38, 0.75);
+$success75: rgba(63, 245, 124, 0.75);
+$warning75: rgba(255, 238, 0, 0.75);
+$info75: rgba(126, 255, 233, 0.75);
+
+$primary50: rgba(72, 61, 223, 0.50);
+$secondary50: rgba(137, 57, 228, 0.50);
+$danger50: rgba(238, 38, 38, 0.50);
+$success50: rgba(63, 245, 124, 0.50);
+$warning50: rgba(255, 238, 0, 0.50);
+$info50: rgba(126, 255, 233, 0.50);
+
+$primary25: rgba(72, 61, 223, 0.25);
+$secondary25: rgba(137, 57, 228, 0.25);
+$danger25: rgba(238, 38, 38, 0.25);
+$success25: rgba(63, 245, 124, 0.25);
+$warning25: rgba(255, 238, 0, 0.25);
+$info25: rgba(126, 255, 233, 0.25);
 
 $blue: blue;
 $indigo: indigo;
@@ -19,20 +39,46 @@ $teal: teal;
 $cyan: cyan;
 $white: white;
 $gray: gray;
-$gray-dark: darkslategray;
+$graydark: darkslategray;
 
-$colors: (
-  "blue": $blue,
-  "indigo": $indigo,
-  "purple": $purple,
-  "pink": $pink,
-  "red": $red,
-  "orange": $orange,
-  "yellow": $yellow,
-  "green": $green,
-  "teal": $teal,
-  "cyan": $cyan,
-  "white": $white,
-  "gray": $gray,
-  "gray-dark": $gray-dark,
-) !default;
+$blue75: rgba(0, 0, 255, 0.75);
+$indigo75: rgba(75, 0, 130, .75);
+$purple75: rgba(128, 0, 128, 0.75);
+$pink75: rgba(255, 192, 203, 0.75);
+$red75: rgba(255, 0, 0, 0.75);
+$orange75: rgba(255, 166, 0, 0.75);
+$yellow75: rgba(255, 255, 0, 0.75);
+$green75: rgba(0, 128, 0, 0.75);
+$teal75: rgba(0, 128, 128, 0.75);
+$cyan75: rgba(0, 255, 255, 0.75);
+$white75: rgba(255, 255, 255, 0.75);
+$gray75: rgba(128, 128, 128, 0.75);
+$graydark75: rgba(47, 79, 79, 0.75);
+
+$blue50: rgba(0, 0, 255, 0.5);
+$indigo50: rgba(75, 0, 130, .5);
+$purple50: rgba(128, 0, 128, 0.5);
+$pink50: rgba(255, 192, 203, 0.5);
+$red50: rgba(255, 0, 0, 0.5);
+$orange50: rgba(255, 166, 0, 0.5);
+$yellow50: rgba(255, 255, 0, 0.5);
+$green50: rgba(0, 128, 0, 0.5);
+$teal50: rgba(0, 128, 128, 0.5);
+$cyan50: rgba(0, 255, 255, 0.5);
+$white50: rgba(255, 255, 255, 0.5);
+$gray50: rgba(128, 128, 128, 0.5);
+$graydark50: rgba(47, 79, 79, 0.5);
+
+$blue25: rgba(0, 0, 255, 0.25);
+$indigo25: rgba(75, 0, 130, 0.25);
+$purple25: rgba(128, 0, 128, 0.25);
+$pink25: rgba(255, 192, 203, 0.25);
+$red25: rgba(255, 0, 0, 0.25);
+$orange25: rgba(255, 166, 0, 0.25);
+$yellow25: rgba(255, 255, 0, 0.25);
+$green25: rgba(0, 128, 0, 0.25);
+$teal25: rgba(0, 128, 128, 0.25);
+$cyan25: rgba(0, 255, 255, 0.25);
+$white25: rgba(255, 255, 255, 0.25);
+$gray25: rgba(128, 128, 128, 0.25);
+$graydark25: rgba(47, 79, 79, 0.25);

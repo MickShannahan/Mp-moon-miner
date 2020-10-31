@@ -1,10 +1,11 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light holo-panel-primary">
-    <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
+<div class="container-fluid">
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-light holo-panel-primary screen-bezel crt collapse">
+    <router-link class="navbar-brand d-flex text-light" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center">
       </div>
       <div>
-        <h5 style="color: green">Miner</h5>
+        <h5 class="text-light barcode">Miner</h5>
       </div>
     </router-link>
     <button
@@ -21,14 +22,14 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item" :class="{ active: $route.name == 'Home' }">
-          <router-link :to="{ name: 'Game' }" class="nav-link">Game</router-link>
+          <router-link :to="{ name: 'Game' }" class="nav-link text-light barcode">Game</router-link>
         </li>
       </ul>
       <span class="navbar-text">
-        <button class="btn btn-success" @click="login" v-if="!user.isAuthenticated">Login</button>
+        <button class="btn btn-outline-success barcode" @click="login" v-if="!user.isAuthenticated">Login</button>
 
         <div class="dropdown" v-else>
-          <div class="btn btn-secondary dropdown-toggle" @click="state.dropOpen = !state.dropOpen">
+          <div class="btn btn-outline-light barcode dropdown-toggle" @click="state.dropOpen = !state.dropOpen">
             <img :src="user.picture" alt="user photo" height="40" class="rounded" />
             <span class="mx-3">{{user.name}}</span>
           </div>
@@ -42,6 +43,12 @@
       </span>
     </div>
   </nav>
+  <div class="row justify-content-end pr-5">
+  <div class="col-1 p-2" style="border-radius:3px;" data-toggle="collapse" data-target="#navbar">
+    <button class="btn btn-phys btn-info">navigation</button>
+  </div>
+  </div>
+</div>
 </template>
 
 <script>

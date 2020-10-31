@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="nebula-bg1">
+  <div id="app" class="nebula-bg1 font-primary">
     <navbar />
     <router-view />
   </div>

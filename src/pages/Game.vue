@@ -2,7 +2,7 @@
   <div class="Game container-fluid">
     <div class="row mt-5">
       <div class="col-4">
-        <OtherMoon v-for="moon in otherMoons" :key="moon.user" :moondData='moon'></OtherMoon>
+        <OtherMoon v-for="moon in otherMoons" :key="moon.user" :moonData='moon'></OtherMoon>
       </div>
       <div id="stats-hover" class="col-7">
         <MyMoon/>

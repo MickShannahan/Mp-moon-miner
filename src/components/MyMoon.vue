@@ -1,7 +1,7 @@
 <template>
   <div class="my-moon row justify-content-center">
     <img class="moon img-fluid" src="../assets/Moonsets/moons/cheese-moon.gif" alt="">
-    <div id='moon-click-area' class="d-flex justify-self-center align-self-center" @click="clickMoon"></div>
+    <div id="moon-click-area" class="d-flex justify-self-center align-self-center" @click="clickMoon"></div>
   </div>
 </template>
 
@@ -10,7 +10,7 @@ import { AppState } from '../AppState'
 import { computed, reactive } from 'vue'
 import { mineService } from '../services/MineService.js'
 export default {
-  name: 'my-moon',
+  name: 'MyMoon',
   setup() {
     const state = reactive({
 

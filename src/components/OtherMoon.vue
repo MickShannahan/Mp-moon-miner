@@ -1,7 +1,7 @@
 <template>
   <div class="other-moon row">
-    <div class="col-12 text-light">
-    {{state.moon}}
+    <div class="col-8 text-light">
+    <img src='../assets/Moonsets/moons/swiss-moon.gif' class="img-fluid" alt="">
     </div>
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
     const state = reactive({
       moon: props.moonData
     })
-    onMounted(() => console.log(state.moon))
+    onMounted(() => console.log(state.moon.img))
     return { state }
   }
 }

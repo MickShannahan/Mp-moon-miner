@@ -2,17 +2,22 @@ import { reactive } from 'vue'
 const moon1 = {
   cheese: 12,
   user: 'other Daryl',
-  upgrades: {}
+  upgrades: {},
+  img: '../assets/Moonsets/moons/mozz-moon.gif'
 }
 const moon2 = {
   cheese: 12,
   user: 'other Tim',
-  upgrades: {}
+  upgrades: {},
+  img: '../assets/Moonsets/moons/blue-moon.gif'
+
 }
 const moon3 = {
   cheese: 1200,
   user: 'other Mick',
-  upgrades: {}
+  upgrades: {},
+  img: '../assets/Moonsets/moons/swiss-moon.gif'
+
 }
 export const AppState = reactive({
   myMoon: { cheese: 0 },

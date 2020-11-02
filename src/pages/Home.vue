@@ -1,6 +1,5 @@
 <template>
   <div class="home container">
-
   </div>
 </template>
 
@@ -52,6 +51,14 @@ font-family: 'Turret Road', cursive;
   box-shadow: inset 0px 0px 5px 5px  rgba(129, 122, 219, 0.753), 0px 0px 3px 3px  rgba(123, 118, 199, 0.753),
    0px 0px 5px 5px  rgba(119, 109, 255, 0.753);
 }
+.holo-panel-enemy{
+  color: white;
+  text-shadow:0px 0px 3px 3px  rgba(199, 118, 118, 0.753) ;
+  border: 1px var(--white) solid;
+  background-color: rgba(223, 67, 61, 0.13);
+  box-shadow: inset 0px 0px 5px 5px  rgba(219, 122, 122, 0.753), 0px 0px 3px 3px  rgba(199, 118, 118, 0.753),
+   0px 0px 5px 5px  rgba(255, 109, 109, 0.753);
+}
 .crt::after {
   content: " ";
   display: block;
@@ -101,6 +108,24 @@ transform: translateY(2px);
   box-shadow:0px 0px 5px 1px rgba(255, 255, 255, 0.658);
 }
 // ANIMATIONS
+@keyframes float{
+  0% {
+    transform: translate(0px, 0%);
+  }
+  25%{
+    transform: translate(0px, -5%);
+  }
+  50%{
+    transform: translate(0px, 0%);
+  }
+  75%{
+    transform: translate(0px, 5%);
+  }
+  100%{
+    transform: translate(0px, 0%);
+  }
+}
+
 @keyframes barcodehover{
   20% {
     font-family: 'Libre Barcode 39', cursive;
@@ -241,10 +266,10 @@ transform: translateY(2px);
 }
 
 @keyframes holo-open{
-  0%{transform: scale(.05, .05);}
-  10%{transform: scale(.1, 1.1);}
-  20%{transform: scale(.1, 1);}
-  30%{transform: scale(.75, 1);}
+  0%{transform: scale(.05, .05), translate(-50%,50%);}
+  10%{transform: scale(.1, 1.1), translate(-90%,50%);}
+  20%{transform: scale(.1, 1), translate(-90%, 1%);}
+  30%{transform: scale(.75, 1), translate(-25%,1%);}
   40%{transform: scale(1, 1);}
   45%{transform: scale(1, 1);}
 }

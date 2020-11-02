@@ -1,10 +1,16 @@
 <template>
-  <div class="stats-panel crt row text-light p-2">
+  <div class="stats-panel rounded-lg crt row text-light p-2">
     <div class="col-12 border">
       <div class="row">
-        <div class="col-12 text-center border-bottom">Moon stats</div>
-        <h4 class="col-5 border-top border-right border-bottom">Cheese: {{cheese}}</h4>
-        <div class="col-7">the rest of the stats</div>
+        <div class="col-12 text-center border-bottom">
+          Moon stats
+        </div>
+        <h4 class="col-5 border-top border-right border-bottom">
+          Cheese: {{ cheese }}
+        </h4>
+        <div class="col-7">
+          the rest of the stats
+        </div>
       </div>
     </div>
   </div>
@@ -14,7 +20,7 @@
 import { AppState } from '../AppState'
 import { computed, reactive } from 'vue'
 export default {
-  name: 'stats-panel',
+  name: 'StatsPanel',
   setup() {
     const state = reactive({
 

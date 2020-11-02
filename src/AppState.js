@@ -23,7 +23,8 @@ export const AppState = reactive({
   myMoon: { cheese: 0 },
   otherMoons: [moon1, moon2, moon3],
   user: {},
-  profile: {}
+  profile: {},
+  targetMoon: {}
 })
 
 // NOTE Getters are used for repeated computeds

@@ -1,14 +1,15 @@
 <template>
   <div class="Game container-fluid">
+    <SabotageModal />
     <div class="row mt-5">
       <div class="col-4">
-        <OtherMoon v-for="moon in otherMoons" :key="moon.user" :moonData='moon'></OtherMoon>
+        <OtherMoon v-for="moon in otherMoons" :key="moon.user" :moon-data="moon"></OtherMoon>
       </div>
       <div id="stats-hover" class="col-7">
-        <MyMoon/>
+        <MyMoon />
       </div>
       <div id="stats-panel" class="col-1 d-flex align-items-end">
-        <StatsPanel/>
+        <StatsPanel />
       </div>
     </div>
   </div>
@@ -20,9 +21,10 @@ import { computed, reactive } from 'vue'
 import MyMoon from '../components/MyMoon'
 import OtherMoon from '../components/OtherMoon'
 import StatsPanel from '../components/StatsPanel'
+import SabotageModal from '../components/SabotageModal'
 export default {
   name: 'Game',
-  components: { MyMoon, StatsPanel, OtherMoon },
+  components: { MyMoon, StatsPanel, OtherMoon, SabotageModal },
   setup() {
     const state = reactive({
 

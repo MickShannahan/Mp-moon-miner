@@ -8,8 +8,11 @@ import { AppState } from './AppState'
 import './AuthConfig'
 import router from './router'
 
+// window.$ = window.jQuery = require('jquery')
+
 createApp(App, {
   AppState
+
 })
-  .use(router, popper, jquery, corejs, bootstrap)
+  .use(router, popper, jquery, corejs, bootstrap, { install: function(Vue, options) { Vue.prototype.$jQuery = require('jquery') } })
   .mount('#app')

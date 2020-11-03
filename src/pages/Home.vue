@@ -59,6 +59,14 @@ font-family: 'Turret Road', cursive;
   box-shadow: inset 0px 0px 5px 5px  rgba(219, 122, 122, 0.753), 0px 0px 3px 3px  rgba(199, 118, 118, 0.753),
    0px 0px 5px 5px  rgba(255, 109, 109, 0.753);
 }
+.holo-panel-sabotage{
+  color: white;
+  text-shadow:0px 0px 3px 3px  rgba(199, 118, 118, 0.753);
+  border: 1px var(--white) solid;
+  background-color: rgba(223, 67, 61, 0.356)!important ;
+  box-shadow: inset 0px 0px 5px 5px  rgba(219, 122, 122, 0.753), 0px 0px 3px 3px  rgba(199, 118, 118, 0.753),
+   0px 0px 5px 5px  rgba(255, 109, 109, 0.753);
+}
 .crt::after {
   content: " ";
   display: block;

@@ -4,35 +4,33 @@
     <!-- Modal -->
     <div
       class="modal fade"
-      id="sabotage-modal"
+      :id="id"
       tabindex="-1"
       role="dialog"
       aria-labelledby="modelTitleId"
       aria-hidden="true"
     >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content holo-panel-sabotage crt">
           <div class="modal-header">
-            <h5 class="modal-title">
-              time to sabotage {{ targetMoon.user }}'s moon
-            </h5>
+            <div class="modal-title">
+              <slot name="head">
+              </slot>
+            </div>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <div class="container-fluid">
+            <slot name="body" class="container-fluid">
               Add rows here
-            </div>
+            </slot>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" @click="closeModal">
+          <slot name="footer" class="modal-footer">
+            <button type="button" class="btn btn-outline-warning w-50 text-center" @click="closeModal">
               Close
             </button>
-            <button type="button" class="btn btn-primary">
-              Save
-            </button>
-          </div>
+          </slot>
         </div>
       </div>
     </div>
@@ -40,22 +38,20 @@
 </template>
 
 <script>
-import { AppState } from '../AppState'
-import { computed, reactive, onMounted, ref } from 'vue'
+import { reactive } from 'vue'
 import $ from 'jquery'
 export default {
   name: 'SabotageModal',
-  setup(context) {
-    const sabotageModal = ref(null)
+  props: ['id'],
+  setup(props) {
     const state = reactive({
     })
-    onMounted(() => {
-      console.log(sabotageModal)
-    })
+
     function closeModal() {
-      $('#sabotage-modal').modal('toggle')
+      $('#' + props.id).modal('toggle')
     }
-    return { state, closeModal, sabotageModal, targetMoon: computed(() => AppState.targetMoon) }
+
+    return { state, closeModal }
   }
 }
 </script>

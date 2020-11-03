@@ -1,9 +1,8 @@
 <template>
   <div class="Game container-fluid">
-    <SabotageModal />
     <div class="row mt-5">
       <div class="col-4">
-        <OtherMoon v-for="moon in otherMoons" :key="moon.user" :moon-data="moon"></OtherMoon>
+        <OtherMoon v-for="moon in otherMoons" :key="moon.id" :moon-data="moon" />
       </div>
       <div id="stats-hover" class="col-7">
         <MyMoon />
@@ -21,10 +20,9 @@ import { computed, reactive } from 'vue'
 import MyMoon from '../components/MyMoon'
 import OtherMoon from '../components/OtherMoon'
 import StatsPanel from '../components/StatsPanel'
-import SabotageModal from '../components/SabotageModal'
 export default {
   name: 'Game',
-  components: { MyMoon, StatsPanel, OtherMoon, SabotageModal },
+  components: { MyMoon, StatsPanel, OtherMoon },
   setup() {
     const state = reactive({
 

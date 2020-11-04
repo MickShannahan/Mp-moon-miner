@@ -23,7 +23,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item" :class="{ active: $route.name == 'Home' }">
+          <li class="nav-item" v-if="game.id" :class="{ active: $route.name == 'Home' }">
             <router-link :to="{ name: 'Game' }" class="nav-link text-light barcode">
               Game
             </router-link>
@@ -75,6 +75,7 @@ export default {
     return {
       state,
       user: computed(() => AppState.user),
+      game: computed(() => AppState.game),
       async login() {
         AuthService.loginWithPopup()
       },

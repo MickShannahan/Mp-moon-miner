@@ -55,6 +55,7 @@ const moon3 = {
 
 }
 export const AppState = reactive({
+  game: {},
   myMoon: { cheese: 0 },
   otherMoons: [moon1, moon2, moon3],
   user: {},

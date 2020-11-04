@@ -6,10 +6,15 @@
 </template>
 
 <script>
+import { computed } from 'vue'
+import { AppState } from './AppState'
 import Navbar from './components/Navbar'
 
 export default {
   name: 'App',
+  setup() {
+    return { appstate: computed(() => AppState) }
+  },
   components: {
     Navbar
   }

@@ -1,15 +1,30 @@
 <template>
-  <div class="home container">
+  <div class="home container-fluid">
+    <div class=" row align-content-center justify-content-center h-100 my-auto">
+      <div class="centered col-7">
+        <button class="btn btn-block btn-primary p-4" @click="createGame">
+          create a game
+        </button>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import { onMounted, reactive } from 'vue'
+import { gamesService } from '../services/GameService'
 // @ is an alias to /src
 
 export default {
   name: 'Home',
-  components: {
-  }
+  setup() {
+    const state = reactive({
+
+    })
+
+    return { state, createGame: () => { gamesService.createGame() } }
+  },
+  components: { }
 }
 </script>
 
@@ -24,6 +39,12 @@ export default {
 font-family: 'Turret Road', cursive;
 }
 
+// classes
+.centered{
+  position: fixed;
+  top: 48vh;
+  right: 0vw;
+}
 .nebula-bg1{
   background-image: url('../assets/Moonsets/Nebula-1.png');
   position: absolute;
@@ -116,6 +137,19 @@ transform: translateY(2px);
   box-shadow:0px 0px 5px 1px rgba(255, 255, 255, 0.658);
 }
 // ANIMATIONS
+@keyframes satalite{
+  0%{transform: rotate(40deg) translate( -5%, -12%);}
+  10%{}
+  20%{}
+  30%{}
+  40%{}
+  50%{transform:rotate(40deg) translate( 5%, 82%);}
+  60%{ }
+  70%{}
+  80%{}
+  90%{}
+  100%{transform: rotate(40deg) translate( -5%, -12%); z-index: +1;;}
+}
 @keyframes float{
   0% {
     transform: translate(0px, 0%);

@@ -15,6 +15,11 @@
           </div>
         </div>
       </template>
+      <template #footer>
+        <button type="button" class="btn btn-outline-warning w-50 text-center" @click="closeModal">
+          Close
+        </button>
+      </template>
     </SabotageModal>
     <div class="col-8 moon text-light">
       <img src="../assets/Moonsets/moons/swiss-moon.gif" class="img-fluid" alt="">
@@ -49,6 +54,7 @@
 import { reactive } from 'vue'
 import SabotageModal from './SabotageModal'
 import { sabotageService } from '../services/SabotageService.js'
+import $ from 'jquery'
 export default {
   name: 'OtherMoon',
   props: ['moonData'],
@@ -60,7 +66,11 @@ export default {
     function targetMoon() {
       sabotageService.targetMoon(state.moon)
     }
-    return { state, targetMoon }
+    function closeModal() {
+      console.log('this is the other moon')
+      $('#sabotage-modal-' + state.moon.id).modal('toggle')
+    }
+    return { state, targetMoon, closeModal }
   }
 }
 </script>

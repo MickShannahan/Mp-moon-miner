@@ -21,7 +21,7 @@ module.exports = {
     'no-console': PROD ? ERROR : WARN,
     'no-debugger': PROD ? ERROR : WARN,
     'space-before-function-paren': [WARN, NEVER],
-    'vue/no-unused-vars': [OFF, NEVER],
+    'vue/no-unused-vars': OFF,
     'vue/max-attributes-per-line': [ERROR, {
       "singleline": 5,
       "multiline": {

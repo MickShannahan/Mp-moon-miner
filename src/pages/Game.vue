@@ -13,17 +13,36 @@
 
 <script>
 import { AppState } from '../AppState'
-import { computed, reactive } from 'vue'
+import { computed, onMounted, reactive } from 'vue'
+import { socketService } from '../services/SocketService'
 import MyMoon from '../components/MyMoon'
 import OtherMoon from '../components/OtherMoon'
+import { useRoute } from 'vue-router'
+import { gamesService } from '../services/GameService'
 export default {
   name: 'Game',
   components: { MyMoon, OtherMoon },
   setup() {
+    const route = useRoute()
     const state = reactive({
+      roomNumber: route.params.gameCode,
+      user: computed(() => AppState.user)
 
     })
-    return { state, otherMoons: computed(() => AppState.otherMoons) }
+    function joinGame() {
+      if (state.user) {
+        gamesService.joinGame(route.params.gameCode)
+        socketService.joinRoom(state, route.params.gameCode)
+      }
+    }
+    onMounted(() => {
+      joinGame()
+    })
+    return {
+      state,
+      joinGame,
+      otherMoons: computed(() => AppState.otherMoons)
+    }
   }
 }
 </script>

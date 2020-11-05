@@ -10,10 +10,11 @@
 </template>
 
 <script>
-import { reactive } from 'vue'
+import { computed, reactive } from 'vue'
 import { mineService } from '../services/MineService.js'
 import Satalite from '../components/Satalite'
 import StatsPanel from '../components/StatsPanel'
+import { AppState } from '../AppState.js'
 export default {
   name: 'MyMoon',
   components: { Satalite, StatsPanel },
@@ -24,7 +25,7 @@ export default {
     function clickMoon() {
       mineService.clickMoon()
     }
-    return { state, clickMoon }
+    return { state, clickMoon, game: computed(() => AppState.game) }
   }
 }
 </script>

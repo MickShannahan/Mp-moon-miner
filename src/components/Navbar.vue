@@ -59,8 +59,6 @@
 </template>
 
 <script>
-import { profileService } from '../services/ProfileService'
-import { api } from '../services/AxiosService'
 import { AuthService } from '../services/AuthService'
 import { AppState } from '../AppState'
 import { computed, reactive } from 'vue'

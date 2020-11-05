@@ -11,8 +11,9 @@
 </template>
 
 <script>
-import { onMounted, reactive } from 'vue'
+import { reactive } from 'vue'
 import { gamesService } from '../services/GameService'
+import router from '../router/index'
 // @ is an alias to /src
 
 export default {
@@ -21,8 +22,11 @@ export default {
     const state = reactive({
 
     })
-
-    return { state, createGame: () => { gamesService.createGame() } }
+    async function createGame() {
+      const game = await gamesService.createGame()
+      router.push({ name: 'Game', params: { gameCode: game.code } })
+    }
+    return { state, createGame }
   },
   components: { }
 }

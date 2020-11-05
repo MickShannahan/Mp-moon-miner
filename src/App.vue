@@ -6,13 +6,17 @@
 </template>
 
 <script>
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { AppState } from './AppState'
 import Navbar from './components/Navbar'
+import { socketService } from './services/SocketService'
 
 export default {
   name: 'App',
   setup() {
+    onMounted(() => {
+      socketService.initializeSocket()
+    })
     return { appstate: computed(() => AppState) }
   },
   components: {

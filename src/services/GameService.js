@@ -3,11 +3,11 @@ import utils from '../Utils/Generators'
 import { api } from './AxiosService'
 const _endpoint = 'games'
 class GamesService {
-  async createGame() {
+  async createGame(gameName) {
     try {
-      const res = await api.post(_endpoint, { name: 'test', code: utils.randomCode() })
+      const res = await api.post(_endpoint, { name: gameName, code: utils.randomCode() })
       console.log('game created', res.data.data)
-      return (res.data.data)
+      AppState.game = res.data.data
     } catch (error) {
       console.error(error)
     }
@@ -17,7 +17,7 @@ class GamesService {
     try {
       const moon = AppState.myMoon
       const res = await api.put(_endpoint + '/' + gameCode, moon)
-      console.log('joined room data', res.data)
+      AppState.game = res.data.data
     } catch (error) {
       console.error(error)
     }

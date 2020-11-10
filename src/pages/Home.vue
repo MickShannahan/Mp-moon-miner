@@ -5,6 +5,13 @@
         <button class="btn btn-block btn-primary p-4" @click="createGame">
           create a game
         </button>
+        <button class="btn btn-block btn-primary p-4">
+          <input v-model="state.joinRoomCode" type="text" class="border rounded bg-transparent text-light">
+          join a game
+          <button class="btn btn-outline-light py-0" @click="joinGame">
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+          </button>
+        </button>
       </div>
     </div>
   </div>
@@ -12,21 +19,25 @@
 
 <script>
 import { reactive } from 'vue'
-import { gamesService } from '../services/GameService'
 import router from '../router/index'
+import { AppState } from '../AppState'
 // @ is an alias to /src
 
 export default {
   name: 'Home',
   setup() {
     const state = reactive({
+      joinRoomCode: ''
 
     })
     async function createGame() {
-      const game = await gamesService.createGame()
-      router.push({ name: 'Game', params: { gameCode: game.code } })
+      router.push({ name: 'GameSetup' })
     }
-    return { state, createGame }
+    async function joinGame() {
+      AppState.game.code = state.joinGameCode
+      router.push({ name: 'GameSetup' })
+    }
+    return { state, createGame, joinGame }
   },
   components: { }
 }
